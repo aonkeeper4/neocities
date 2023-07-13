@@ -10,11 +10,9 @@ jobs:
     - name: Deploy to Neocities
       # You may pin to the exact commit or the version.
       # uses: bcomnes/deploy-to-neocities@88fe06ede7610ddd463d1ea28f0e08bffa370dae
-      uses: bcomnes/deploy-to-neocities@v1.1.17
+      uses: kognise/neocities-deploy-action@v1
       with:
-        # Neocities API token for site to deploy to
-        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-        # Local folder to deploy to neocities
-        dist_dir: ./
-        # Delete orphaned files on neocities that don't exist in distDir
-        cleanup: true
+        # The directory to deploy
+        directory: .
+        # Your Neocities API token
+        neocities_token: ${{ secrets.NEOCITIES_API_TOKEN }}
