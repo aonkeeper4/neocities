@@ -13,6 +13,6 @@ jobs:
       uses: kognise/neocities-deploy-action@v1
       with:
         # The directory to deploy
-        directory: ./public
+        directory: 'public/'
         # Your Neocities API token
         neocities_token: ${{ secrets.NEOCITIES_API_TOKEN }}
