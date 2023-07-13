@@ -1,0 +1,19 @@
+{
+  "name": "neocities",
+  "version": "1.0.0",
+  "description": "my neocities website! https://aonkeeper4.neocities.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0rmaliz/neocities.git"
+  },
+  "author": "aonkeeper4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n0rmaliz/neocities/issues"
+  },
+  "homepage": "https://github.com/n0rmaliz/neocities#readme"
+}
