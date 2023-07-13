@@ -5,7 +5,7 @@ on:
 jobs:
   main:
     name: deploy to neocities
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Deploy to Neocities using Ruby CLI
       # You may pin to the exact commit or the version.
@@ -15,4 +15,4 @@ jobs:
         # Neocities API token
         key: ${{ secrets.NEOCITIES_API_TOKEN }}
         # Local directory to deploy
-        dir: 'public/'
+        dir: 'public'
