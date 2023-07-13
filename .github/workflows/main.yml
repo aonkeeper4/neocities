@@ -1,0 +1,20 @@
+on:
+  push
+  
+  
+jobs:
+  main:
+    name: deploy to neocities
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to Neocities
+      # You may pin to the exact commit or the version.
+      # uses: bcomnes/deploy-to-neocities@88fe06ede7610ddd463d1ea28f0e08bffa370dae
+      uses: bcomnes/deploy-to-neocities@v1.1.17
+      with:
+        # Neocities API token for site to deploy to
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        # Local folder to deploy to neocities
+        dist_dir: public
+        # Delete orphaned files on neocities that don't exist in distDir
+        cleanup: true
