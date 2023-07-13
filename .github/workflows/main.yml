@@ -7,12 +7,12 @@ jobs:
     name: deploy to neocities
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Neocities
+    - name: Deploy to Neocities using Ruby CLI
       # You may pin to the exact commit or the version.
-      # uses: bcomnes/deploy-to-neocities@88fe06ede7610ddd463d1ea28f0e08bffa370dae
-      uses: kognise/neocities-deploy-action@v1
+      # uses: jonchang/deploy-neocities@82e27bc459646327bf56409f2893c92914b6ebe8
+      uses: jonchang/deploy-neocities@v1
       with:
-        # The directory to deploy
-        directory: 'public/'
-        # Your Neocities API token
-        neocities_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        # Neocities API token
+        key: ${{ secrets.NEOCITIES_API_TOKEN }}
+        # Local directory to deploy
+        dir: 'public/'
