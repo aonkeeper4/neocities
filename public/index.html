@@ -83,10 +83,8 @@
                     <h3>changelog!</h3>
                     <p>im hoping to figure out a way to automate this using github commits? maybe? i dont do javascript
                         very well lmao anyways changelog time</p>
-                    <p>fuck mm/dd/yyyy. all my homies use dd/mm/yyyy</p>
-                    <ul>
-                        <li>07-12-2023: started changelog, reformatted layout so navbar is on left side,
-                            added content</li>
+                    <ul id="changelog-data">
+
                     </ul>
                 </div>
             </div>
@@ -99,7 +97,8 @@
             <div class=white-theme-border><a href="#" class="white-theme">some-where else?</a></div>
         </div>
     </div>
-    <script src="sketch.js"></script>
+    <script src="scripts/sketch.js"></script>
+    <script src="scripts/commit-tracker.js" onload="renderCommitData(15)"></script>
 </body>
 
 </html>
