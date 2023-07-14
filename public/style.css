@@ -140,3 +140,23 @@ li:before {
 #nav a {
     text-decoration: none;
 }
+
+#gay-container {
+    position: absolute;
+    top: 0px;
+}
+
+#gay-container img {
+    position: absolute;
+    visibility: hidden;
+    top: 0px;
+    transform: translateY(-500px);
+    transition: 2s ease-in-out;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 5px 5px #121420;
+}
+
+.pointer {
+    cursor: pointer;
+}
