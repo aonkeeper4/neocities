@@ -162,7 +162,7 @@ let header = function (root) {
     starbursts = [];
 
     root.draw = function () {
-        root.background(0, 0);
+        root.background(root.color("#121420"));
 
         for (let layer of layers) {
             layer.show();
