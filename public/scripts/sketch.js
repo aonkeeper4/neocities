@@ -162,7 +162,7 @@ let header = function (root) {
     starbursts = [];
 
     root.draw = function () {
-        root.background(root.color("#121420"));
+        root.background(0, 0);
 
         for (let layer of layers) {
             layer.show();
@@ -190,7 +190,7 @@ let planet = function (root) {
 
     let a = 0;
     root.draw = function () {
-        root.background(root.color("#121420"));
+        root.background(0, 0);
 
         root.push();
         root.rotate(root.PI / 2);

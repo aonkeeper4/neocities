@@ -1,6 +1,7 @@
 /* colors: #403f4c, #2c2b3c, #1b2432, #121420, #b76d68, #f2e4e3 */
 
 body {
+    background-image: url("./bg.png");
     background-color: #121420;
     font-family: 'Press Start 2P', cursive;
     font-variant-ligatures: none;
