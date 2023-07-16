@@ -10,7 +10,8 @@
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./styles/index.css" rel="stylesheet" type="text/css" media="all">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,17 +65,6 @@
                         <li>pronouns: see my pronouns.page! if in doubt just they/them is fine :]</li>
                         <li>i'm queer, genderfluid, transfem, audhd (vaguely fem shaped gay creature)</li>
                         <li>self-identified faggot</li>
-                        <li>i like minecraft, celeste, will wood, lovejoy, <a
-                                href="https://open.spotify.com/artist/29lz7gs8edwnnfuXW4FhMl?si=YFySmesgTfm5g2xtuSJgfA">laura
-                                jane grace</a> (listen to her music right now), stormlight archive, mistborn, anything
-                            else
-                            cosmere
-                            related, undertale, deltarune, mcyt (specifically hermitcraft and the life series,
-                            <em>was</em> a dsmp fan), programming (i blame rust (the programming language) for
-                            kickstarting my trans awakening and
-                            celeste for driving it home), uhh what
-                            else
-                        </li>
                         <li>dont be a fucking bigot! this is a <span class="rainbow pointer"
                                 onclick="releaseGay(10, 3000, 1000*60); return false">bigot-free
                                 space</span>!</li>
@@ -99,20 +89,24 @@
                         <li>i'm also @aonkeeper4 on discord if u want to chat potentially</li>
                         <li><a href="https://github.com/n0rmaliz/neocities">the github repository for this website? i
                                 guess??</a></li>
-                        <li>uhh i think thats it</li>
                     </ul>
+                </div>
+                <div id="bye">
+                    <p>uhh i think thats it :) go look around the rest of the site ig there's some good stuff on here
+                    </p>
                 </div>
             </div>
         </div>
         <div id="nav">
-            <div class=white-theme-border><a href="#" class="white-theme">home</a></div>
-            <div class=white-theme-border><a href="#about-me" class="white-theme">about me :3</a></div>
-            <div class=white-theme-border><a href="#links" class="white-theme">links</a></div>
-            <div class=white-theme-border><a href="#" class="white-theme">some-where else?</a></div>
+            <div class=white-theme-border><a href="index.html" class="white-theme">home</a></div>
+            <div class=white-theme-border><a href="index.html#about-me" class="white-theme">about me :3</a></div>
+            <div class=white-theme-border><a href="index.html#links" class="white-theme">links</a></div>
+            <div class=white-theme-border><a href="interests.html" class="white-theme">stuff i like</a></div>
         </div>
     </div>
-    <script src="scripts/sketch.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/index/sketch.js"></script>
+    <script src="scripts/index/script.js"></script>
 </body>
 
 </html>
