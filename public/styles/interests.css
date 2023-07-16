@@ -1,0 +1,21 @@
+#interests div {
+    overflow: hidden;
+    clear: both;
+}
+
+#interests div:nth-child(even) img {
+    float: left;
+    margin-right: 20px;
+}
+
+#interests div:nth-child(odd) img {
+    float: right;
+    margin-left: 20px;
+}
+
+#interests img {
+    top: 0;
+    aspect-ratio: 1;
+    width: 150px;
+    object-fit: cover;
+}
