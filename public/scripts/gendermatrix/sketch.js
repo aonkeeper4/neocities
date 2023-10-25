@@ -31,13 +31,13 @@ let gendermatrix = function (root) {
             }
             this.t++;
             if (this.pulse > 0) {
-                this.pulse *= 0.97;
+                this.pulse *= 0.9;
             }
         };
 
         this.show = function () {
             root.colorMode(root.HSL);
-            let pulsed = root.color(this.hue, this.sat, this.light + this.pulse);
+            let pulsed = root.color(this.hue, this.sat, this.light * this.pulse);
             root.stroke(pulsed);
             root.fill(pulsed);
             root.textSize(this.size);
@@ -60,16 +60,17 @@ let gendermatrix = function (root) {
 
     function charColumn(x, w, cols) {
         this.update = function () {
-            if (this.t % this.newPulseSpeed < 1) {
-                this.startPulse(root.floor(root.random(this.chars.length * 1 / 2, this.chars.length * 5 / 6)));
+            if (this.updateT % this.newPulseSpeed < 1) {
+                let len = root.floor(root.random(this.chars.length * 1 / 2, this.chars.length * 5 / 6));
+                this.startPulse(len);
             }
-            if (this.t % this.updatePulseSpeed < 1) {
+            if (this.updateT % this.updatePulseSpeed < 1) {
                 this.updatePulse();
             }
             for (let c of this.chars) {
                 c.update();
             }
-            this.t++;
+            this.updateT++;
         }
 
         this.show = function () {
@@ -79,19 +80,26 @@ let gendermatrix = function (root) {
         }
 
         this.pulsePos = 0;
+        this.pulseLength = 0;
         this.pulseValue = 0;
-        this.startPulse = function (pulseValue) {
+        this.pulseT = 0;
+        this.startPulse = function (pulseLength) {
             let start = root.floor(root.random(this.chars.length));
             this.pulsePos = start;
-            this.pulseValue = pulseValue;
+            this.pulseLength = pulseLength;
+            this.pulseValue = 1;
+            this.pulseT = 0;
         }
 
         this.updatePulse = function () {
-            if (this.pulseValue < 1) { return; }
-            this.chars[this.pulsePos].pulse = this.pulseValue * 5;
-            this.pulseValue--;
+            if (this.pulseValue <= 0.05) { return; }
+            if (this.pulseT >= this.pulseLength) {
+                this.pulseValue *= 0.4;
+            }
+            this.chars[this.pulsePos].pulse = this.pulseValue;
             this.pulsePos++;
             this.pulsePos %= this.chars.length;
+            this.pulseT++;
         }
 
         this.charHeight = (w * 5 / 3);
@@ -102,9 +110,9 @@ let gendermatrix = function (root) {
         this.numChars = root.floor(this.h / this.charHeight);
         this.chars = [];
         this.cols = cols;
-        this.t = 0;
         this.updatePulseSpeed = root.floor(root.random(1, 5));
         this.newPulseSpeed = root.floor(root.random(100, 300));
+        this.updateT = 0;
 
         for (let i = 0; i < this.numChars; i++) {
             let y = this.y + this.charHeight * i;
