@@ -124,20 +124,20 @@ const genderMatrix = (p) => {
       this.pulseValue = 0;
       this.pulseT = 0;
 
-      this.charHeight = (w * 5) / 3;
+      this.charHeight = (w * 5) / 4;
 
       this.x = x;
-      this.y = 0;
+      this.y = this.charHeight / 6;
       this.w = w;
       this.h = p.height + this.charHeight;
 
-      this.numChars = p.floor(this.h / this.charHeight);
+      this.numChars = p.ceil(this.h / this.charHeight);
       this.chars = [];
 
       this.cols = cols;
 
       this.updatePulseSpeed = p.floor(p.random(1, 5));
-      this.newPulseSpeed = p.floor(p.random(100, 300));
+      this.newPulseSpeed = p.floor(p.random(50, 200));
       this.updateT = 0;
 
       for (let i = 0; i < this.numChars; i++) {
